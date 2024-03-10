@@ -10,6 +10,9 @@ type Server struct {
 	httpServer *http.Server
 }
 
+// s *Server - это приемник, т.е. экзмепляр h имеет тип сервер
+// это значит что ссылаться будем на этот тип через переменную экземляра h
+// как будто к структуре привязываемся, которая отвечает за переменную
 func (s *Server) Run(port string, handler http.Handler) error {
 	s.httpServer = &http.Server{
 		Addr:           ":" + port,
